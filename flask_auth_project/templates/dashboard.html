@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Dashboard</h2>
+    <p>Welcome, <b>{{ email }}</b> (<span style="color:#18bc9c;">{{ role }}</span>)</p>
+    <p>This system uses:</p>
+    <ul>
+        <li>Flask Framework</li>
+        <li>JWT Authentication</li>
+        <li>Session Management</li>
+        <li>Admin Panel</li>
+        <li>User Management</li>
+    </ul>
+</div>
+{% endblock %}

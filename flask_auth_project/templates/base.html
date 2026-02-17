@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Flask Auth</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/script.js"></script>
+</head>
+<body>
+<div class="navbar">
+    <h2>Enterprise Auth System</h2>
+    <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/admin">Admin Panel</a>
+        {% if session.get('user') %}
+            <span>{{ session.get('user') }} ({{ session.get('role') }})</span>
+            <a href="/logout">Logout</a>
+        {% else %}
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="main">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>
